@@ -119,7 +119,7 @@ public class MainActivity extends AppCompatActivity {
                         dist+=dist1-dist2;
                         dist2=dist1;
                     }
-                    if(!initial_flag) {
+                    if(!initial_flag) {//check flag
                         Log.d("listner","initial disatnce"+dist1);
                         initial_flag=true;
                         initial_dist=dist1;
