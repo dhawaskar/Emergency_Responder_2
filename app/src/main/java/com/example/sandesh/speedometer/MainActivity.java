@@ -26,7 +26,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
-    /*Added for testiung*/
     long dist2=0;
     long dist=0;
     boolean read_flag=false;
