@@ -2,6 +2,7 @@ package com.example.sandesh.speedometer;
 
 import android.Manifest;
 import android.content.Context;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.Location;
 import android.location.LocationListener;
@@ -17,6 +18,7 @@ import android.util.Log;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.google.android.gms.maps.model.LatLng;
@@ -32,10 +34,21 @@ public class MainActivity extends AppCompatActivity {
     boolean initial_flag=false;
     double initial_dist=0.0;
     List<LatLng> latlng=new ArrayList<LatLng>();
+
+    private Button mapButton;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        mapButton = (Button) findViewById(R.id.mapButton);
+        mapButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openMapActivity();
+            }
+        });
+
         if ((ActivityCompat.checkSelfPermission(MainActivity.this,
                 Manifest.permission.ACCESS_COARSE_LOCATION)
                 != PackageManager.PERMISSION_GRANTED) &&
@@ -135,9 +148,14 @@ public class MainActivity extends AppCompatActivity {
             public void onProviderEnabled(String provider) {}
 
             public void onProviderDisabled(String provider) {}
+
         };
 
 // Register the listener with the Location Manager to receive location updates
         locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, locationListener);
+    }
+    public void openMapActivity() {
+        Intent showMapActivity = new Intent(this, MapVisualization.class);
+        startActivity(showMapActivity);
     }
 }
