@@ -37,5 +37,11 @@
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"
         />
+    <ImageView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/responder_location_image_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/responder_location"
+    />
 
 </android.support.design.widget.CoordinatorLayout>
