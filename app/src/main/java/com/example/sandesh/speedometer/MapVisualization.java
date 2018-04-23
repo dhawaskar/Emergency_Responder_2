@@ -14,11 +14,8 @@ public class MapVisualization extends AppCompatActivity {
     ImageView responderLocationImageView;
     private Button traceResponderButton;
 
-
     @Override
-
     protected void onCreate(Bundle savedInstanceState) {
-
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_map_visualization);
         responderLocationImageView = findViewById(R.id.responder_location_image_view);
@@ -34,9 +31,6 @@ public class MapVisualization extends AppCompatActivity {
                 updateResponderImageViewLocation();
             }
         });
-
-        //responderLocationImageView.setTranslationY(responderLocationController.generateNearbyCoordinate(
-        //        (responderLocationImageView.getY())));
     }
 
     protected void updateResponderImageViewLocation() {
