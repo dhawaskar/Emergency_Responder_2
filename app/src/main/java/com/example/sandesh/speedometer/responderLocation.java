@@ -13,12 +13,12 @@ public class responderLocation {
         int randomNumberScale = 50;
         int upperBound = (int) currentCoordinate + randomNumberScale;
         int lowerBound = (int) currentCoordinate - randomNumberScale;
-        int n = random.nextInt(upperBound - lowerBound) + lowerBound;
 
-        Log.d("why", Float.toString(currentCoordinate));
-        Log.d("why2", Integer.toString(n));
+        int newCoordinate = random.nextInt(upperBound - lowerBound) + lowerBound;
 
+        Log.d("OriginalCoordinate", Float.toString(currentCoordinate));
+        Log.d("NewCoordinate", Integer.toString(newCoordinate));
 
-        return n;
+        return newCoordinate;
     }
 }
