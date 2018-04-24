@@ -37,10 +37,13 @@ public class MapVisualization extends AppCompatActivity {
         new Timer().scheduleAtFixedRate(new TimerTask() {
             @Override
             public void run() {
-                responderLocationImageView.setTranslationX(responderLocationController.generateNearbyCoordinate(
-                        (responderLocationImageView.getX())));
-                responderLocationImageView.setTranslationY(responderLocationController.generateNearbyCoordinate(
-                        (responderLocationImageView.getY())));
+                responderLocationImageView.setTranslationX(
+                        responderLocationController.guideTowardsCenterOfMathBuildingThenMoveAroundFromThere(
+                        responderLocationImageView.getX(), 0));
+
+                responderLocationImageView.setTranslationY(
+                        responderLocationController.guideTowardsCenterOfMathBuildingThenMoveAroundFromThere(
+                        responderLocationImageView.getY(), 1));
             }
         }, 0, 1000);//put here time 1000 milliseconds=1 second
     }
