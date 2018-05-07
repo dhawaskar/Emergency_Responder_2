@@ -59,7 +59,7 @@ public class MainActivity extends AppCompatActivity {
             sock = new DatagramSocket();
             sock.setSoTimeout(6000);//600000
             sock.send(req_probe);
-            Log.d("udpprobing", "Packet sent");
+            //Log.d("udpprobing", "Packet sent");
         }catch (SocketException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
@@ -89,7 +89,7 @@ public class MainActivity extends AppCompatActivity {
                 openMapActivity();
             }
         });
-
+        /*
         if ((ActivityCompat.checkSelfPermission(MainActivity.this,
                 Manifest.permission.ACCESS_COARSE_LOCATION)
                 != PackageManager.PERMISSION_GRANTED) &&
@@ -131,7 +131,8 @@ public class MainActivity extends AppCompatActivity {
 
             }
         }
-
+    */
+        /*
         Thread distance=new Thread(new Runnable() {
             @Override
             public void run() {
@@ -153,7 +154,8 @@ public class MainActivity extends AppCompatActivity {
         LocationManager locationManager = (LocationManager) this.getSystemService(Context.LOCATION_SERVICE);
 
 // Define a listener that responds to location updates
-        LocationListener locationListener = new LocationListener() {
+*/
+        /*LocationListener locationListener = new LocationListener() {
             public void onLocationChanged(Location location) {
                 Log.d("listner","Location changed");
                 TextView txt=(TextView)findViewById(R.id.id1);
@@ -167,18 +169,18 @@ public class MainActivity extends AppCompatActivity {
                     //Log.d("listner","Latitude"+location.getLatitude()+"Longitude"+location.getLongitude());
                     float logitute=(float)location.getLongitude();
                     float latitude=(float)location.getLatitude();
-                    Log.d("Lati and logi",""+logitute+"\t"+latitude);
+                    //Log.d("Lati and logi",""+logitute+"\t"+latitude);
                     send_data();
                     latlng.add(new LatLng(location.getLatitude(),location.getLongitude()));
                     //Log.d("listner","distrance is"+SphericalUtil.computeLength(latlng));
                     long dist1=(long)SphericalUtil.computeLength(latlng);
                     if(dist1>dist2 && initial_flag){
-                        Log.d("listner","distance changed\n old one:"+dist2+" and new distance"+dist1);
+                        //Log.d("listner","distance changed\n old one:"+dist2+" and new distance"+dist1);
                         dist+=dist1-dist2;
                         dist2=dist1;
                     }
                     if(!initial_flag && dist1>0) {//check flag
-                        Log.d("listner","initial disatnce"+dist1);
+                        //Log.d("listner","initial disatnce"+dist1);
                         initial_flag=true;
                         initial_dist=dist1;
                         dist-=initial_dist;
@@ -186,6 +188,7 @@ public class MainActivity extends AppCompatActivity {
                     }
                     txt.setText("Speed:\n"+speed+"m/s"+"\ndistance\n"+dist+"m");
                 }
+
             }
 
             public void onStatusChanged(String provider, int status, Bundle extras) {}
@@ -198,6 +201,7 @@ public class MainActivity extends AppCompatActivity {
 
 // Register the listener with the Location Manager to receive location updates
         locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, locationListener);
+        */
     }
     public void openMapActivity() {
         Intent showMapActivity = new Intent(this, MapVisualization.class);

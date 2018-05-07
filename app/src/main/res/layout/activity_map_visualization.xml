@@ -33,7 +33,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/mapImage"
-        android:src="@drawable/math_building_top_view"
+        android:src="@drawable/engineer_building_top_view"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"
         />
@@ -55,7 +55,7 @@
         android:id="@+id/beginButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="450dp"
+        android:layout_marginTop="550dp"
         android:layout_gravity="center_horizontal"
         android:text="Trace Responder"
         app:layout_anchor="@+id/mapImage"
