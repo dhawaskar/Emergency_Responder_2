@@ -9,10 +9,13 @@ import static java.lang.Math.max;
 import static java.lang.Math.min;
 
 public class responderLocation {
-    int mathBuildingSideDoorwayXCoordinate = 950;
-    int mathBuildingSideDoorwayYCoordinate = 620;
+    int mathBuildingSideDoorwayXCoordinate = 455;
+    int mathBuildingSideDoorwayYCoordinate = 800;
     int mathBuildingCenterXCoordinate = 600;
     int mathBuildingCenterYCoordinate = 550;
+
+    int mostRecentXMeterCoordinate;
+    int mostRecentYMeterCoordinate;
 
     public int generateNearbyCoordinate(float currentCoordinate) {
         Random random = new Random();
@@ -22,8 +25,8 @@ public class responderLocation {
 
         int newCoordinate = random.nextInt(upperBound - lowerBound) + lowerBound;
 
-        Log.d("OriginalCoordinate", Float.toString(currentCoordinate));
-        Log.d("NewCoordinate", Integer.toString(newCoordinate));
+        //Log.d("OriginalCoordinate", Float.toString(currentCoordinate));
+        //Log.d("NewCoordinate", Integer.toString(newCoordinate));
 
         return newCoordinate;
     }
@@ -39,8 +42,8 @@ public class responderLocation {
 
         int newCoordinate = random.nextInt(upperBound - lowerBound) + lowerBound;
 
-        Log.d("OriginalCoordinate", Float.toString(currentCoordinate));
-        Log.d("NewCoordinate", Integer.toString(newCoordinate));
+        //Log.d("OriginalCoordinate", Float.toString(currentCoordinate));
+        //Log.d("NewCoordinate", Integer.toString(newCoordinate));
 
         return newCoordinate;
     }
